@@ -9,27 +9,27 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class ProductDatabase extends SQLiteOpenHelper {
+
+    //global vars
+    private static final int VERSION_NUMBER = 11;
+
+
+    //database of product
     private static final String DATABASE_NAME = "Products.db";
     private static final String TABLE_NAME = "Products_Details";
-    private static final int VERSION_NUMBER = 11;
     private static final String products_name = "Name";
     private static final String ID = "id";
     private static final String description = "Description";
     private static final String price = "Price";
-    private static final String PRODUCT_MODEL = "Model";
-
-
-   // private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+"("+id+"INTEGER PRIMARY KEY AUTOINCREMENT,"+products_name+" VARCHAR(255), "+description+" VARCHAR(255) ,"+price+" INTEGER)";
-  //  private static final String CREATE_TABLE2 = "create Table "+TABLE_NAME+"("+id+"INTEGER PRIMARY KEY AUTOINCREMENT,"+products_name+" VARCHAR(255), "+description+" VARCHAR(255) ,"+price+" INTEGER)";
-
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     private static final String SELECT_ALL = "SELECT * FROM " + TABLE_NAME;
+
 
   private Context context;
 
 
-    public DatabaseHelper( Context context) {
+    public ProductDatabase(Context context) {
         super(context,DATABASE_NAME,null,VERSION_NUMBER);
         this.context = context;
     }
@@ -39,10 +39,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         try {
             Toast.makeText(context,"on create",Toast.LENGTH_LONG).show();
-           // db.execSQL(CREATE_TABLE);
-          //  db.execSQL("create Table "+TABLE_NAME+"(\"+id+\"INTEGER PRIMARY KEY AUTOINCREMENT,"+products_name+" VARCHAR(255), "+description+" VARCHAR(255) ,"+price+" INTEGER)");
             db.execSQL("create Table "+TABLE_NAME+"("+ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+products_name+" VARCHAR(255), "+description+" VARCHAR(255) ,"+price+" INTEGER)");
-           // db.execSQL("create Table "+TABLE_NAME+"(\"+id+\"INTEGER PRIMARY KEY AUTOINCREMENT,"+products_name+" VARCHAR(255), "+description+" VARCHAR(255) ,"+price+" INTEGER,"+PRODUCT_MODEL+" VARCHAR(255) PRIMARY KEY)");
+
+
 
         }catch (Exception e){
             System.out.println(e);
@@ -96,9 +95,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(this.price, price);
         contentValues.put(this.ID, id);
         sqLiteDatabase.update(TABLE_NAME,contentValues,ID +" = ?",new String[]{id});
-         return true;
+        return true;
     }
 
+    public Integer deleteData(String id){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        return sqLiteDatabase.delete(TABLE_NAME,ID+" = ?",new String[]{id});
+    }
 
 
     

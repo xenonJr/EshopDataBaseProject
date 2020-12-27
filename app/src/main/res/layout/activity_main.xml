@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ativities.MainActivity">
+    tools:context=".Ativities.ControlPanel">
 
     <Button
         android:id="@+id/add_product_button"
@@ -48,4 +48,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deletebutton"
         app:layout_constraintVertical_bias="0.075" />
+
+    <Button
+        android:id="@+id/userDetails"
+        android:layout_width="170dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:text="user details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateButton"
+        app:layout_constraintVertical_bias="0.007" />
 </androidx.constraintlayout.widget.ConstraintLayout>

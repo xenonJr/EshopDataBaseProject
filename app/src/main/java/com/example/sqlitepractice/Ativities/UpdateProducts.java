@@ -3,7 +3,6 @@ package com.example.sqlitepractice.Ativities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.sqlitepractice.R;
 
-import static com.example.sqlitepractice.GlobalClass.GlobalClass.databaseHelper;
+import static com.example.sqlitepractice.GlobalClass.GlobalClass.productDatabase;
 
 public class UpdateProducts extends AppCompatActivity {
 
@@ -24,7 +23,7 @@ public class UpdateProducts extends AppCompatActivity {
         setContentView(R.layout.activity_update_products);
 
 
-        name = findViewById(R.id.name);
+        name = findViewById(R.id.id_to_delete);
         id_text = findViewById(R.id.id_input);
         description = findViewById(R.id.description);
         price = findViewById(R.id.price);
@@ -51,7 +50,7 @@ public class UpdateProducts extends AppCompatActivity {
                 int finalGiven_price = given_price;
                 int finalid_No = id_no;
 
-                boolean is_Updated = databaseHelper.updateData(given_name,given_description, finalGiven_price,id);
+                boolean is_Updated = productDatabase.updateData(given_name,given_description, finalGiven_price,id);
 
                 if(is_Updated == true){
                     Toast.makeText(UpdateProducts.this, "Product Updated", Toast.LENGTH_SHORT).show();

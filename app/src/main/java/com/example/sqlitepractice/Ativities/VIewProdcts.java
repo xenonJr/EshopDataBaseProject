@@ -4,13 +4,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.sqlitepractice.R;
 
-import static com.example.sqlitepractice.GlobalClass.GlobalClass.databaseHelper;
+import static com.example.sqlitepractice.GlobalClass.GlobalClass.productDatabase;
 
 public class VIewProdcts extends AppCompatActivity {
 
@@ -20,7 +18,7 @@ public class VIewProdcts extends AppCompatActivity {
         setContentView(R.layout.activity_v_iew_prodcts);
 
 
-        Cursor cursor =  databaseHelper.displayData();
+        Cursor cursor =  productDatabase.displayData();
 
         if(cursor.getCount() == 0){
             showData("Error","No Data");

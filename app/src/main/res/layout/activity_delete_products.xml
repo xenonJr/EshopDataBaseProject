@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".Ativities.DeleteProducts">
 
+
+    <EditText
+        android:id="@+id/id_to_delete"
+        android:layout_width="357dp"
+        android:layout_height="56dp"
+        android:hint="ID"
+        app:layout_constraintBottom_toTopOf="@+id/Delete_Product_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/Delete_Product_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="352dp"
+        android:text="Delete Product"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
