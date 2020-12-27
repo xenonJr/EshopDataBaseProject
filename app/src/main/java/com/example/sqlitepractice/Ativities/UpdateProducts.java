@@ -2,7 +2,6 @@ package com.example.sqlitepractice.Ativities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,65 +9,61 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.sqlitepractice.Database.DatabaseHelper;
-import com.example.sqlitepractice.GlobalClass.GlobalClass;
 import com.example.sqlitepractice.R;
 
 import static com.example.sqlitepractice.GlobalClass.GlobalClass.databaseHelper;
 
-public class AddProductActivity extends AppCompatActivity {
+public class UpdateProducts extends AppCompatActivity {
 
-    //variables
 
-   // DatabaseHelper databaseHelper;
-    EditText name, id, description, price;
-    Button add_prodct;
+    EditText name, id_text, description, price;
+    Button update_product;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product);
+        setContentView(R.layout.activity_update_products);
 
-        //initializing components
+
         name = findViewById(R.id.name);
-        id = findViewById(R.id.id);
+        id_text = findViewById(R.id.id_input);
         description = findViewById(R.id.description);
         price = findViewById(R.id.price);
-        add_prodct = findViewById(R.id.add_product);
+        update_product = findViewById(R.id.add_product);
 
 
-
-        add_prodct.setOnClickListener(new View.OnClickListener() {
+        update_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String given_name = name.getText().toString();
                 String given_description = description.getText().toString();
+                String id = id_text.getText().toString();
                 int given_price = 6;
+                int id_no = 99;
 
                 try{
                     given_price = Integer.parseInt(price.getText().toString());
+                    id_no = Integer.parseInt(id_text.getText().toString());
                 } catch(NumberFormatException ex){ // handle your exception
 
                 }
 
 
                 int finalGiven_price = given_price;
+                int finalid_No = id_no;
 
+                boolean is_Updated = databaseHelper.updateData(given_name,given_description, finalGiven_price,id);
 
-                long rowId = databaseHelper.insertData(given_name,given_description, finalGiven_price);
-                if(rowId ==-1){
-                    Toast.makeText(AddProductActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-                }else {
-                    Log.d("info",given_name);
-                    Log.d("info",given_description);
-                    Toast.makeText(AddProductActivity.this, "Row "+given_name+" Added Successfully", Toast.LENGTH_SHORT).show();
-
+                if(is_Updated == true){
+                    Toast.makeText(UpdateProducts.this, "Product Updated", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(UpdateProducts.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
+
+
 
 
             }
         });
-
-
 
 
     }

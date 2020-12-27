@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SqlitePractice">
-        <activity android:name=".Ativities.VIewProdcts"></activity>
+        <activity android:name=".Ativities.DeleteProducts"></activity>
+        <activity android:name=".Ativities.UpdateProducts" />
+        <activity android:name=".Ativities.VIewProdcts" />
         <activity android:name=".Ativities.AddProductActivity" />
         <activity android:name=".Ativities.MainActivity">
             <intent-filter>

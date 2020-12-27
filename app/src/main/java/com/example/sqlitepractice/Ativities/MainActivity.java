@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
     ImageView imageView;
-    Button add, view;
+    Button add, view,delete,update;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         add = findViewById(R.id.add_product_button);
         view = findViewById(R.id.view_product);
+        delete = findViewById(R.id.deletebutton);
+        update = findViewById(R.id.updateButton);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),VIewProdcts.class));
             }
         });
+
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),UpdateProducts.class));
+            }
+        });
+
 
 
 
