@@ -29,8 +29,8 @@
 
     <Button
         android:id="@+id/deletebutton"
-        android:layout_width="160dp"
-        android:layout_height="57dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Delete Product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,9 +40,9 @@
 
     <Button
         android:id="@+id/updateButton"
-        android:layout_width="161dp"
-        android:layout_height="45dp"
-        android:text="Update Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +51,8 @@
 
     <Button
         android:id="@+id/userDetails"
-        android:layout_width="170dp"
-        android:layout_height="46dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="user details"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,4 +61,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateButton"
         app:layout_constraintVertical_bias="0.007" />
+
+    <Button
+        android:id="@+id/view_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Orders"
+        app:layout_constraintBottom_toTopOf="@+id/swithRole"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userDetails"
+        app:layout_constraintVertical_bias="0.394" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Admin Panel"
+        android:textSize="38dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/add_product_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
+
+    <Button
+        android:id="@+id/swithRole"
+        android:layout_width="122dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="116dp"
+        android:text="SWITCH ROLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

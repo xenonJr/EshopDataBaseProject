@@ -3,14 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".Ativities.HomePageUser">
+
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/order_no"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Product List"
+        android:textSize="38dp">
+
+
+    </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/product_Recycle_View"
         android:layout_width="match_parent"
-        android:layout_height="561dp">
+        android:layout_height="wrap_content">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -20,7 +32,18 @@
         android:text="Confirm Order"
         android:background="@color/cardview_dark_background"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="40dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/swithRole"
+        android:layout_marginTop="10dp"
+        android:text="Switch Role"
+        android:background="@color/cardview_dark_background"
+        android:layout_gravity="center"
+        android:layout_width="160dp"
         android:layout_height="40dp">
 
     </Button>

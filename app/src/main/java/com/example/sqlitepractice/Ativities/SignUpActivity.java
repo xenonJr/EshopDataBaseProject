@@ -64,7 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 }
 
-                startActivity(new Intent(getApplicationContext(), ControlPanel.class));
+                startActivity(new Intent(getApplicationContext(), HomePageUser.class));
             }
         });
 

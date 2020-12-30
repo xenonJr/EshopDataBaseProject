@@ -9,14 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Ativities.HomePageUser"></activity>
+        <activity android:name=".Ativities.SignUpActivity"></activity>
+        <activity android:name=".Ativities.ViewOrders" />
+        <activity android:name=".Ativities.HomePageUser" />
         <activity android:name=".Ativities.SignInActivity" />
         <activity android:name=".Ativities.ControlPanel" />
         <activity android:name=".Ativities.DeleteProducts" />
         <activity android:name=".Ativities.UpdateProducts" />
         <activity android:name=".Ativities.VIewProdcts" />
         <activity android:name=".Ativities.AddProductActivity" />
-        <activity android:name=".Ativities.SignUpActivity">
+        <activity android:name=".Ativities.MasterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

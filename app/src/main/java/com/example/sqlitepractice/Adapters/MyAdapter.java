@@ -40,6 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Toast.makeText(context, "i am here tooooo", Toast.LENGTH_SHORT).show();
         holder.textViewNAME.setText(products.get(position).getName());
         holder.product_price.setText(products.get(position).getPrice());
         holder.product_description.setText(products.get(position).getDescription());

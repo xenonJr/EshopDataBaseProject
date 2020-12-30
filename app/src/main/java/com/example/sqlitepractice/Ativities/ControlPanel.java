@@ -21,7 +21,7 @@ public class ControlPanel extends AppCompatActivity {
 
     ProductDatabase productDatabase;
     ImageView imageView;
-    Button add, view,delete,update,showUser;
+    Button add, view,delete,update,showUser,viewOrders,switchR;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,8 @@ public class ControlPanel extends AppCompatActivity {
         delete = findViewById(R.id.deletebutton);
         update = findViewById(R.id.updateButton);
         showUser = findViewById(R.id.userDetails);
+        viewOrders = findViewById(R.id.view_orders);
+        switchR = findViewById(R.id.swithRole);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +64,13 @@ public class ControlPanel extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),DeleteProducts.class));
+            }
+        });
+
+        switchR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MasterActivity.class));
             }
         });
 
@@ -93,7 +102,23 @@ public class ControlPanel extends AppCompatActivity {
             }
         });
 
+
+        viewOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(),ViewOrders.class));
+
+            }
+        });
+
+
+
     }
+
+
+
+
 
     private void showData(String title, String resultSet) {
 

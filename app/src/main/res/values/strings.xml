@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SqlitePractice</string>
+    <string name="user_info">User Name : Xenon \n Address : 384/3 Mirpur Dhaka</string>
 </resources>

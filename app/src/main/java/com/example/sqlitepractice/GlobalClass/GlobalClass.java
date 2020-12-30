@@ -6,7 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.sqlitepractice.Database.OrderDatabase;
 import com.example.sqlitepractice.Database.ProductDatabase;
 import com.example.sqlitepractice.Database.UserDatabase;
+import com.example.sqlitepractice.Models.Order;
 import com.example.sqlitepractice.Models.Product;
+import com.example.sqlitepractice.Models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,8 @@ public class GlobalClass {
     public static ProductDatabase productDatabase;
     public static UserDatabase userDatabase;
     public static OrderDatabase orderDatabase;
-    public static String currentUserId;
+    public static User currentUser;
+    public static List<Order> orderList = new ArrayList<>();
     public static List<Product> globalProductList = new ArrayList<>();
 
     //setting up database

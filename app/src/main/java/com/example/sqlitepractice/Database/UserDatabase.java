@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 import com.example.sqlitepractice.GlobalClass.GlobalClass;
+import com.example.sqlitepractice.Models.User;
 
 import static com.example.sqlitepractice.GlobalClass.GlobalClass.productDatabase;
 
@@ -137,8 +138,13 @@ public class UserDatabase extends SQLiteOpenHelper {
                 String un = cursor.getString(2);
                 String pa = cursor.getString(5);
 
+                String id = cursor.getString(0);
+                String  name = cursor.getString(1);
+                String add = cursor.getString(3);
+                String mail = cursor.getString(4);
+
                 if(uname.equals(un) && pass.equals(pa)){
-                    GlobalClass.currentUserId = cursor.getString(0);
+                    GlobalClass.currentUser = new User(name,un,add,mail,pa);
                     result = true;
                     break;
                 }
