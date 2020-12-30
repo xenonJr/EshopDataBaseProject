@@ -153,7 +153,7 @@
                     android:layout_height="58dp"
                     android:gravity="center"
                     android:letterSpacing="0.02"
-                    android:text="Cancel"
+                    android:text="Sign Up"
                     android:textAllCaps="false"
                     android:textColor="#BCBCBC"
                     android:textSize="25dp"

@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SqlitePractice">
-        <activity android:name=".Ativities.SignInActivity"></activity>
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".Ativities.HomePageUser"></activity>
+        <activity android:name=".Ativities.SignInActivity" />
         <activity android:name=".Ativities.ControlPanel" />
         <activity android:name=".Ativities.DeleteProducts" />
         <activity android:name=".Ativities.UpdateProducts" />

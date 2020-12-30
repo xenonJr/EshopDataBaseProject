@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import com.example.sqlitepractice.GlobalClass.GlobalClass;
+
+import static com.example.sqlitepractice.GlobalClass.GlobalClass.productDatabase;
+
 public class UserDatabase extends SQLiteOpenHelper {
 
     //global vars
@@ -115,6 +119,38 @@ public class UserDatabase extends SQLiteOpenHelper {
         return sqLiteDatabase.delete(USER_TABLE_NAME,ID+" = ?",new String[]{id});
     }
 
+
+    public boolean canSignIn(String uname,String pass){
+        boolean result = false;
+
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor =  sqLiteDatabase.rawQuery("SELECT * FROM "+USER_TABLE_NAME,null);
+
+        if(cursor.getCount() == 0){
+            Toast.makeText(context, "No Data Found", Toast.LENGTH_SHORT).show();
+
+        }else{
+            StringBuffer stringBuffer = new StringBuffer();
+
+            while (cursor.moveToNext()){
+
+                String un = cursor.getString(2);
+                String pa = cursor.getString(5);
+
+                if(uname.equals(un) && pass.equals(pa)){
+                    GlobalClass.currentUserId = cursor.getString(0);
+                    result = true;
+                    break;
+                }
+
+            }
+
+        }
+
+
+
+        return  result;
+    }
 
 
 }

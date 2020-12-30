@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.sqlitepractice.Models.Product;
+
 public class ProductDatabase extends SQLiteOpenHelper {
 
     //global vars

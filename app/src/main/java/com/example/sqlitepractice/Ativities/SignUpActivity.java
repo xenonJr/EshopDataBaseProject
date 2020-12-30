@@ -27,6 +27,8 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        GlobalClass.setProductDatabase(getApplicationContext());
+
         GlobalClass.setUserDatabase(this);
 
         name = findViewById(R.id.name_sign_up);
